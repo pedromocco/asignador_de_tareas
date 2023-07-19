@@ -1,0 +1,58 @@
+<div class="card m-3  bg-black bg-opacity-10 border-0">
+
+<div class="container">
+  <div class="col m-3" style="text-align: center;" id="Formulario">
+      <h1 class="container text-white"> {{ title }} </h1>
+      <hr class="border border-danger border-1 opacity-75">
+
+        <div>
+      
+          <form class="form group row">
+  
+            <div class="form-group col ">
+  
+              <input type="text" name="name" id="name" placeholder="Nombre" class="form-control" [(ngModel)]="nameBox">
+  
+            </div>
+  
+            <div class="form-group col">
+      
+              <input type="text" name="lastName" id="lastName" placeholder="Apellido" class="form-control" [(ngModel)]="lastNameBox">
+      
+            </div>
+      
+      
+            <div class="form-group col">
+
+              <button type="submit" class="form-control btn btn-danger" (click)="addEmployed()" >Agregar empleado</button>
+      
+            </div>
+  
+          </form>
+
+        </div>
+  </div>
+</div>
+
+<table class="container table border rounded" style="text-align: center;">
+  <thead>
+    <tr>
+      <th scope="col" class="border-end">#</th>
+      <th scope="col" class="border-end">Nombre</th>
+      <th scope="col" class="border-end">Apellido</th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let employed of employes; let i=index" >
+    <tr>
+      <th scope="row" class="border-end">{{ i + 1 }}</th>
+      <td class="border-end">{{ employed.name }}</td>
+      <td class="border-end">{{ employed.lastName }}</td>
+    </tr>
+  </tbody>
+  
+</table>
+
+</div>
+
+<app-back-home></app-back-home>
